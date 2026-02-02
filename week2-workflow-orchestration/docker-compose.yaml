@@ -14,7 +14,9 @@ services:
   kestra:
     image: kestra/kestra:latest
     container_name: kestra
-    command: server local
+    command: server standalone
+    depends_on:
+      - postgres
     ports:
       - "8088:8080"
     environment:
@@ -25,14 +27,21 @@ services:
             driverClassName: org.postgresql.Driver
             username: kestra
             password: kestra
+
         kestra:
-          server:
-            basicAuth:
-              enabled: false
-    depends_on:
-      - postgres
+          repository:
+            type: postgres
+          queue:
+            type: postgres
+          storage:
+            type: local
+            local:
+              basePath: "/tmp/kestra-storage"
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - kestra_storage:/tmp/kestra-storage
 
 volumes:
   kestra_pgdata:
+  kestra_storage:

@@ -1,0 +1,51 @@
+id: taxi_ingestion
+namespace: zoomcamp.week2
+
+inputs:
+  - id: taxi
+    type: SELECT
+    values: ["green", "yellow"]
+    defaults: green
+
+  - id: year
+    type: INT
+    defaults: 2020
+
+  - id: month
+    type: STRING
+    defaults: "01"
+    description: "Use zero-padded month: 01..12"
+
+tasks:
+  - id: fetch_and_extract
+    type: io.kestra.plugin.scripts.shell.Commands
+    runner: PROCESS
+    env:
+      TAXI: "{{ inputs.taxi }}"
+      YEAR: "{{ inputs.year }}"
+      MONTH: "{{ inputs.month }}"
+    commands:
+      - |
+        set -e
+
+        FILE_NAME="${TAXI}_tripdata_${YEAR}-${MONTH}.csv"
+        GZ_NAME="${FILE_NAME}.gz"
+        URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/${TAXI}/${GZ_NAME}"
+
+        echo "URL=${URL}"
+        echo "OUT=${FILE_NAME}"
+        echo "CWD=$(pwd)"
+
+        curl -L -o "./${GZ_NAME}" "${URL}"
+        ls -lh "./${GZ_NAME}"
+
+        gzip -dc "./${GZ_NAME}" > "./${FILE_NAME}"
+        ls -lh "./${FILE_NAME}"
+
+        ROWS_NO_HEADER=$(( $(wc -l < "./${FILE_NAME}") - 1 ))
+        echo "ROWS_NO_HEADER=${ROWS_NO_HEADER}"
+
+        cp "./${FILE_NAME}" "./output.csv"
+        ls -lh "./output.csv"
+    outputFiles:
+      - "./output.csv"
