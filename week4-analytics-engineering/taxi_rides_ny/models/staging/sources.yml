@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: zoomcamp-486506   # your GCP project id
+    schema: raw        # dataset where tables live
+
+    tables:
+      - name: yellow_tripdata
+      - name: green_tripdata
+      - name: fhv_tripdata
