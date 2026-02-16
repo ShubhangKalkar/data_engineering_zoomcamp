@@ -1,0 +1,23 @@
+[
+    {"name":"VendorID","type":"STRING"},
+    {"name":"lpep_pickup_datetime","type":"STRING"},
+    {"name":"lpep_dropoff_datetime","type":"STRING"},
+    {"name":"store_and_fwd_flag","type":"STRING"},
+    {"name":"RatecodeID","type":"STRING"},
+    {"name":"PULocationID","type":"STRING"},
+    {"name":"DOLocationID","type":"STRING"},
+    {"name":"passenger_count","type":"STRING"},
+    {"name":"trip_distance","type":"STRING"},
+    {"name":"fare_amount","type":"STRING"},
+    {"name":"extra","type":"STRING"},
+    {"name":"mta_tax","type":"STRING"},
+    {"name":"tip_amount","type":"STRING"},
+    {"name":"tolls_amount","type":"STRING"},
+    {"name":"ehail_fee","type":"STRING"},
+    {"name":"improvement_surcharge","type":"STRING"},
+    {"name":"total_amount","type":"STRING"},
+    {"name":"payment_type","type":"STRING"},
+    {"name":"trip_type","type":"STRING"},
+    {"name":"congestion_surcharge","type":"STRING"}
+  ]
+  
