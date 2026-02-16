@@ -154,7 +154,7 @@ FROM `zoomcamp-486506.nytaxi.stg_fhv_tripdata`;
 
 ---
 
-## ✅ dbt Command Used to Build Models
+## dbt Command Used to Build Models
 
 ```
 dbt build --target prod
