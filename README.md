@@ -14,8 +14,9 @@ The course covers end-to-end data engineering concepts including containerizatio
 | Week 2 | Workflow Orchestration | `week_02_workflow_orchestration/` | 
 | Week 3 | Data Warehouse & BigQuery | `week_03_data_warehouse/` |
 | Week 4 | Analytics Engineering (dbt) | `week_04_analytics_engineering/` | 
-| Week 5 | Batch Processing (Spark) | `week_05_batch_processing/` | ``` <-- In Progress ```
+| Week 5 | Batch Processing (Spark) | `week_05_batch_processing/` | ``` <-- In Progress 
 | Week 6 | Streaming (Kafka) | `week_06_streaming/` |
+```
 
 Each weekly folder contains:
 - Homework answers
