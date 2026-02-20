@@ -11,7 +11,9 @@ This week focused on:
 3. Incremental/time-based materialization
 4. Built-in data quality checks
 5. Reproducible analytics pipelines
+```
 
+```
 Architecture
 Raw Data (NYC Taxi Files)
         ↓
@@ -28,14 +30,12 @@ Data Quality Checks + Lineage Graph
 
 Bruin acts as:
 
-Orchestrator
+1. Orchestrator
+2. Transformation engine
+3. Dependency manager
+4. Data quality validator
 
-Transformation engine
-
-Dependency manager
-
-Data quality validator
-
+```
 📂 Project Structure
 my-pipeline/
 ├── .bruin.yml                # Connection configuration (DuckDB)
@@ -45,6 +45,8 @@ my-pipeline/
         ├── ingestion/        # Data ingestion logic
         ├── staging/          # Cleaning & deduplication
         └── marts/            # Analytical models
+```
+
 Required Components
 
 Bruin projects must contain:
