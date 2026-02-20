@@ -6,11 +6,11 @@ In Week 5, I implemented a declarative data pipeline using Bruin to process NYC 
 
 This week focused on:
 ```
-Data platform concepts (assets, lineage, contracts)
-Declarative pipeline design
-Incremental/time-based materialization
-Built-in data quality checks
-Reproducible analytics pipelines
+1. Data platform concepts (assets, lineage, contracts)
+2. Declarative pipeline design
+3. Incremental/time-based materialization
+4. Built-in data quality checks
+5. Reproducible analytics pipelines
 
 Architecture
 Raw Data (NYC Taxi Files)
