@@ -1,22 +1,18 @@
-Week 5 — Data Platforms with Bruin
-📌 Overview
+# Week 5 — Data Platforms with Bruin
+
+Overview
 
 In Week 5, I implemented a declarative data pipeline using Bruin to process NYC Taxi data end-to-end — from ingestion to transformed analytical tables — using a lightweight local analytics engine (DuckDB).
 
 This week focused on:
-
+```
 Data platform concepts (assets, lineage, contracts)
-
 Declarative pipeline design
-
 Incremental/time-based materialization
-
 Built-in data quality checks
-
 Reproducible analytics pipelines
 
-```
-🏗️ Architecture
+Architecture
 Raw Data (NYC Taxi Files)
         ↓
 Bruin Assets (Python + SQL)
@@ -28,7 +24,7 @@ Cleaned / Deduplicated Staging Tables
 Analytics Tables
         ↓
 Data Quality Checks + Lineage Graph
-
+```
 
 Bruin acts as:
 
