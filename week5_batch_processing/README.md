@@ -12,7 +12,6 @@ This week focused on:
 4. Built-in data quality checks
 5. Reproducible analytics pipelines
 ```
-
 ```
 Architecture
 Raw Data (NYC Taxi Files)
@@ -50,12 +49,9 @@ my-pipeline/
 Required Components
 
 Bruin projects must contain:
-
-.bruin.yml
-
-pipeline/pipeline.yml
-
-pipeline/assets/
+1. .bruin.yml
+2. pipeline/pipeline.yml
+3. pipeline/assets/
 
 ⚙️ Setup Instructions
 1️⃣ Install Bruin CLI
