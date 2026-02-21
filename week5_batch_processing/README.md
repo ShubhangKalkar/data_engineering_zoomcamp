@@ -57,50 +57,46 @@ Bruin projects must contain:
 1️⃣ Install Bruin CLI
 curl -LsSf https://getbruin.com/install/cli | sh
 
-Verify installation:
 
+Verify installation:
 bruin --version
+
 2️⃣ Initialize Project
 bruin init zoomcamp my-pipeline
 cd my-pipeline
+
 3️⃣ Configure DuckDB Connection
-
 Edit .bruin.yml:
-
 connections:
   duckdb:
     type: duckdb
     path: zoomcamp.duckdb
-
 This creates a local analytical warehouse (no cloud required).
 
 4️⃣ Run the Pipeline
 bruin run
 
+```
 First run should use:
-
 bruin run --full-refresh
+```
 
 This ensures tables are created from scratch.
 
-🧠 Materialization Strategy
-
+```
+Materialization Strategy
 For monthly NYC taxi data, we used:
-
 time_interval
 
 This allows:
+1. Incremental processing
+2. Partition-aware transformations
+3. Efficient reprocessing by pickup_datetime
 
-Incremental processing
-
-Partition-aware transformations
-
-Efficient reprocessing by pickup_datetime
-
+```
 🔎 Running Specific Assets with Dependencies
 
 If an upstream file changes:
-
 bruin run --select ingestion.trips+
 
 The + runs all downstream dependencies automatically.
@@ -108,7 +104,6 @@ The + runs all downstream dependencies automatically.
 📊 Data Quality Checks
 
 Example check added to ensure required fields:
-
 columns:
   pickup_datetime:
     not_null: true
