@@ -1,4 +1,16 @@
--- Q1: What is the percentage of trips that were paid for with credit card?
+-- Q1: What is the start and end date of the data?
+import duckdb
+
+con = duckdb.connect("taxi_pipeline.duckdb")
+
+con.execute("""
+SELECT 
+    MIN(tpep_pickup_datetime) AS start_date,
+    MAX(tpep_pickup_datetime) AS end_date
+FROM ny_taxi.yellow_taxi_data
+""").fetchall()
+
+-- Q2: What is the percentage of trips that were paid for with credit card?
 con.execute("""
 SELECT 
     ROUND(
