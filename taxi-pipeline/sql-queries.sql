@@ -19,3 +19,10 @@ SELECT
     ) AS credit_card_percentage
 FROM ny_taxi.yellow_taxi_data
 """).fetchall()
+
+-- Q3: What is the average trip distance for trips that were paid for with credit card?
+con.execute("""
+SELECT 
+    ROUND(SUM(tip_amount), 2)
+FROM ny_taxi.yellow_taxi_data
+""").fetchall()
