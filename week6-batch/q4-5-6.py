@@ -19,6 +19,20 @@ trips_nov15 = df.filter(
 print("Trips on Nov 15:", trips_nov15)
 
 
+# --------------------------------
+# Q4 — Longest trip
+# --------------------------------
+
+df_trip = df.withColumn(
+    "trip_hours",
+    (unix_timestamp("tpep_dropoff_datetime") - unix_timestamp("tpep_pickup_datetime")) / 3600
+)
+
+longest_trip = df_trip.selectExpr("max(trip_hours)").collect()[0][0]
+
+print("Longest trip hours:", longest_trip)
+
+
 result.show()
 
 spark.stop()
