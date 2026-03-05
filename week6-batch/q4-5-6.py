@@ -33,6 +33,27 @@ longest_trip = df_trip.selectExpr("max(trip_hours)").collect()[0][0]
 print("Longest trip hours:", longest_trip)
 
 
+# --------------------------------
+# Q6 — Least frequent pickup zone
+# --------------------------------
+
+zones = spark.read.option("header", True).csv("taxi_zone_lookup.csv")
+
+df.createOrReplaceTempView("trips")
+zones.createOrReplaceTempView("zones")
+
+result = spark.sql("""
+SELECT
+    z.Zone,
+    COUNT(*) as trips
+FROM trips t
+JOIN zones z
+ON t.PULocationID = z.LocationID
+GROUP BY z.Zone
+ORDER BY trips ASC
+LIMIT 1
+""")
+
 result.show()
 
 spark.stop()
