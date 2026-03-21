@@ -47,4 +47,3 @@ Each weekly folder contains:
 ## Acknowledgements
 - **DataTalksClub** for creating and maintaining the Data Engineering Zoomcamp  
 - Course repo: https://github.com/DataTalksClub/data-engineering-zoomcamp
-
