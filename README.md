@@ -10,12 +10,13 @@ The course covers end-to-end data engineering concepts including containerizatio
 
 | Week | Topic | Folder |
 |-----:|-------|--------|
-| Week 1 | Docker, SQL, Terraform | `week_01_docker_sql_terraform/` |
-| Week 2 | Workflow Orchestration | `week_02_workflow_orchestration/` | 
-| Week 3 | Data Warehouse & BigQuery | `week_03_data_warehouse/` |
-| Week 4 | Analytics Engineering (dbt) | `week_04_analytics_engineering/` | 
-| Week 5 | Batch Processing (Spark) | `week_05_batch_processing/` | 
-| Week 6 | Streaming (Kafka) | `week_06_streaming/` | ``` <-- In Progress 
+| Week 1 | Docker, SQL, Terraform | `week1_docker_sql_terraform/` |
+| Week 2 | Workflow Orchestration | `week2_workflow_orchestration/` | 
+| Week 3 | Data Warehouse & BigQuery | `week3_data_warehouse/` |
+| Week 4 | Analytics Engineering (dbt) | `week4_analytics_engineering/` | 
+| Week 5 | Data Platforms | `week5_data_platforms/` | 
+| Week 6 | Batch | `week6_batch/` | 
+| Week 7 | Streaming | `week7_streaming/` | ``` <-- In Progress 
 ```
 
 Each weekly folder contains:
